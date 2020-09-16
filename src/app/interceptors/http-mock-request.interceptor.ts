@@ -18,7 +18,7 @@ const urls = [
 ];
 
 @Injectable()
-export class HttpMokRequestInterceptor implements HttpInterceptor {
+export class HttpMockRequestInterceptor implements HttpInterceptor {
   constructor(private injector: Injector) {}
 
   intercept(

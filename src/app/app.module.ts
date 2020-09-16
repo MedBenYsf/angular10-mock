@@ -6,7 +6,7 @@ import { environment } from '../environments/environment';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpMokRequestInterceptor } from './interceptors/http-mok-request.interceptor';
+import { HttpMockRequestInterceptor } from './interceptors/http-mock-request.interceptor';
 import { HttpRequestInterceptor } from './interceptors/http-request.interceptor';
 
 export const isMock = environment.mock;
@@ -16,7 +16,7 @@ export const isMock = environment.mock;
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: isMock ? HttpMokRequestInterceptor : HttpRequestInterceptor,
+      useClass: isMock ? HttpMockRequestInterceptor : HttpRequestInterceptor,
       multi: true,
     },
   ],
